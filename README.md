@@ -7,13 +7,14 @@
 
 # Visão Geral do Projeto
 
- Decidimos desenvolver uma embarcação robô controlada por Inteligência Artificial e parcialmente autônoma, denominada, temporariamente, Projeto Poseidon.
- Utilizaremos dados fornecidos pelas pesquisas de Institutos parceiros, analisaremos sua fonte e estudo, e assim, vamos aplicar nossa Inteligência Artificial para a análise completa dos dados, e aplicaremos nossa solução embasada em tais informações.
- Para o desenvolvimento sustentável do Projeto Poseidon que visa tornar o oceano mais saudável, utilizaremos recursos fornecidos pelas empresas parceiras.
-  A Inteligência Artificial também será responsável por analisar dados e identificar as regiões mais poluídas do nosso oceano. Ela irá traçar uma rota ideal para conseguir efetuar a maior coleta de lixo marinho possível, e leva-lo para zonas recicláveis, reduzindo a carga de resíduos e objetos poluentes.
-Também, ao coletar os resíduos, para casos em que ocorra, sem intuito, a captura de alguma forma de vida, nossa I.A, através de uma análise de objetos, alertará em nosso sistema que captou tal, e, assim, iremos filtrar nossa coleta, até que tal forma de vida vá um outro compartimento, onde liberaremos tal vida marinha, novamente, para as águas.
- Após a realização de nosso projeto, primeiramente desenvolvido para o Oceano Atlântico, buscaremos, posteriormente, ampliá-lo para outros oceanos, e, assim, controlaremos e monitoraremos nossas embarcações através do sistema cloud, que não utiliza servidores, sendo totalmente sustentável. Além disso, o sistema cloud também armazenará dados de nossas coletas, que serão enviados para a cátedra UNESCO para análise e pesquisas.
+Decidimos desenvolver uma embarcação robô controlada por Inteligência Artificial e parcialmente autônoma, denominada, temporariamente, Projeto Poseidon.
+Utilizaremos dados fornecidos pelas pesquisas de Institutos parceiros, analisaremos sua fonte e estudo, e assim, vamos aplicar nossa Inteligência Artificial para a análise completa dos dados, e aplicaremos nossa solução embasada em tais informações.
 
+Para o desenvolvimento sustentável do Projeto Poseidon que visa tornar o oceano mais saudável, utilizaremos recursos fornecidos pelas empresas parceiras.
+A Inteligência Artificial também será responsável por analisar dados e identificar as regiões mais poluídas do nosso oceano. Ela irá traçar uma rota ideal para conseguir efetuar a maior coleta de lixo marinho possível, e leva-lo para zonas recicláveis, reduzindo a carga de resíduos e objetos poluentes.
+
+Também, ao coletar os resíduos, para casos em que ocorra, sem intuito, a captura de alguma forma de vida, nossa I.A, através de uma análise de objetos, alertará em nosso sistema que captou tal, e, assim, iremos filtrar nossa coleta, até que tal forma de vida vá um outro compartimento, onde liberaremos tal vida marinha, novamente, para as águas.
+Após a realização de nosso projeto, primeiramente desenvolvido para o Oceano Atlântico, buscaremos, posteriormente, ampliá-lo para outros oceanos, e, assim, controlaremos e monitoraremos nossas embarcações através do sistema cloud, que não utiliza servidores, sendo totalmente sustentável. Além disso, o sistema cloud também armazenará dados de nossas coletas, que serão enviados para a cátedra UNESCO para análise e pesquisas.
 
 # Visão Geral
 
