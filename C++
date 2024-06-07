@@ -1,0 +1,131 @@
+#include <Servo.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <DHT.h>
+
+
+const int TRIGGER_PIN = 2;
+const int ECHO_PIN = 3;
+const int SERVO_PIN = 9;
+const int LED_GREEN_PIN = 10;
+const int LED_RED_PIN = 11;
+const int BUZZER_PIN = 12;
+const int DHT_PIN = 7;
+
+
+const int MAX_DISTANCE = 50;
+const int BUZZER_FREQUENCY = 300;
+const int INTERVAL = 2000;
+
+
+Servo servoMotor;
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+DHT dht(DHT_PIN, DHT22);
+
+bool isDistanceMode = true;
+bool isCollecting = false;
+bool isBuzzerOn = false;
+
+unsigned long previousMillis = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(TRIGGER_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  pinMode(LED_GREEN_PIN, OUTPUT);
+  pinMode(LED_RED_PIN, OUTPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+
+  servoMotor.attach(SERVO_PIN);
+  servoMotor.write(0);
+  digitalWrite(LED_RED_PIN, HIGH);
+
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Iniciando...");
+  delay(2000);
+  lcd.clear();
+
+  dht.begin();
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis >= INTERVAL) {
+    previousMillis = currentMillis;
+    isDistanceMode = !isDistanceMode;
+  }
+
+  if (isDistanceMode) {
+    digitalWrite(TRIGGER_PIN, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TRIGGER_PIN, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TRIGGER_PIN, LOW);
+
+    long duration = pulseIn(ECHO_PIN, HIGH);
+    int distance = duration * 0.034 / 2;
+
+    lcd.setCursor(0, 0);
+    lcd.print("Distancia: ");
+    lcd.print(distance);
+    lcd.print("cm            ");
+
+    if (distance < MAX_DISTANCE) {
+      if (!isCollecting) {
+        isCollecting = true;
+        digitalWrite(LED_RED_PIN, LOW);
+        digitalWrite(LED_GREEN_PIN, HIGH);
+        lcd.setCursor(0, 1);
+        lcd.print("Residuos!");
+        digitalWrite(BUZZER_PIN, HIGH);
+        tone(BUZZER_PIN, BUZZER_FREQUENCY);
+        servoMotor.write(90);
+      }
+    } else {
+      if (isCollecting) {
+        isCollecting = false;
+        digitalWrite(LED_GREEN_PIN, LOW);
+        digitalWrite(LED_RED_PIN, HIGH);
+        digitalWrite(BUZZER_PIN, LOW);
+        noTone(BUZZER_PIN);
+        servoMotor.write(0);
+        lcd.setCursor(0, 1);
+        lcd.print("                ");
+      }
+    }
+  } else {
+    int temperature = dht.readTemperature();
+
+    lcd.setCursor(0, 0);
+    lcd.print("Temperatura: ");
+    lcd.print(temperature);
+    lcd.print("C            ");
+
+    if (temperature >= 60) {
+      if (!isBuzzerOn) {
+        isBuzzerOn = true;
+        digitalWrite(BUZZER_PIN, HIGH);
+        tone(BUZZER_PIN, BUZZER_FREQUENCY);
+      }
+    } else {
+      if (isBuzzerOn) {
+        isBuzzerOn = false;
+        digitalWrite(BUZZER_PIN, LOW);
+        noTone(BUZZER_PIN);
+      }
+    }
+  }
+
+  if (!isDistanceMode && isBuzzerOn) {
+    long duration = pulseIn(ECHO_PIN, HIGH);
+    int distance = duration * 0.034 / 2;
+    if (distance >= MAX_DISTANCE) {
+      isBuzzerOn = false;
+      digitalWrite(BUZZER_PIN, LOW);
+      noTone(BUZZER_PIN);
+    }
+  }
+}
