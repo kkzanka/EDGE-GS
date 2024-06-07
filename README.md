@@ -1,5 +1,10 @@
 # EDGE-GS
 
+#Integrantes
+- Djalma Moreira de Andrade Filho, RM 555530
+- Felipe Paes de Barros Muller Carioba, RM 558447
+- Carlos Eduardo dos Santos Ribeiro Filho, RM 556785
+
 # Visão Geral
 
 Este projeto implementa um sistema de coleta de resíduos e monitoramento de temperatura usando um servo motor, um sensor ultrassônico, um sensor de temperatura e umidade (DHT22), um display LCD e um buzzer. O sistema alterna entre medir a distância de objetos (para detecção de resíduos) e a temperatura ambiente, acionando mecanismos de coleta e alertas sonoros conforme necessário.
@@ -72,3 +77,4 @@ Este projeto implementa um sistema de coleta de resíduos e monitoramento de tem
 ## Links:
 
 - [Projeto no Wokwi](https://wokwi.com/projects/399997878789051393)
+- [Vídeo de Explicação](https://youtu.be/tlACNckX74Q)
