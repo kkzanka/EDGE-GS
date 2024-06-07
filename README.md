@@ -71,4 +71,4 @@ Este projeto implementa um sistema de coleta de resíduos e monitoramento de tem
 
 ## Links:
 
-- [Projeto no Wokwi] (https://wokwi.com/projects/399997878789051393)
+- [Projeto no Wokwi](https://wokwi.com/projects/399997878789051393)
