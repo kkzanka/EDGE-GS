@@ -68,3 +68,7 @@ Este projeto implementa um sistema de coleta de resíduos e monitoramento de tem
 
 - Após o upload e a inicialização, o sistema começará a alternar entre os modos de medição de distância e temperatura.
 - Observe as ações do servo motor, LEDs e buzzer conforme as condições de distância e temperatura.
+
+## Links:
+
+- [Projeto no Wokwi] https://wokwi.com/projects/399997878789051393
