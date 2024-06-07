@@ -16,7 +16,7 @@ A Inteligência Artificial também será responsável por analisar dados e ident
 Também, ao coletar os resíduos, para casos em que ocorra, sem intuito, a captura de alguma forma de vida, nossa I.A, através de uma análise de objetos, alertará em nosso sistema que captou tal, e, assim, iremos filtrar nossa coleta, até que tal forma de vida vá um outro compartimento, onde liberaremos tal vida marinha, novamente, para as águas.
 Após a realização de nosso projeto, primeiramente desenvolvido para o Oceano Atlântico, buscaremos, posteriormente, ampliá-lo para outros oceanos, e, assim, controlaremos e monitoraremos nossas embarcações através do sistema cloud, que não utiliza servidores, sendo totalmente sustentável. Além disso, o sistema cloud também armazenará dados de nossas coletas, que serão enviados para a cátedra UNESCO para análise e pesquisas.
 
-# Visão Geral
+# Visão Geral do Projeto em Edge
 
 Este projeto implementa um sistema de coleta de resíduos e monitoramento de temperatura usando um servo motor, um sensor ultrassônico, um sensor de temperatura e umidade (DHT22), um display LCD e um buzzer. O sistema alterna entre medir a distância de objetos (para detecção de resíduos) e a temperatura ambiente, acionando mecanismos de coleta e alertas sonoros conforme necessário.
 
